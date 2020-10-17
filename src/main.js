@@ -8,6 +8,8 @@ var homePage = document.querySelector('.main-poster');
 var makeYourOwnBtn = document.querySelector('.show-form');
 var showSavedPosterBtn = document.querySelector('.show-saved');
 var showSavedPoster = document.querySelector('.saved-posters');
+var takeMeBackBtn = document.querySelector('.show-main');
+var backToMainBtn = document.querySelector('.back-to-main');
 
 
 // we've provided you with some data to work with 👇
@@ -114,42 +116,17 @@ var currentPoster;
 // event listeners go here 👇
 window.onload = generateRandomPoster()
 showRandomPosterButton.addEventListener('click', generateRandomPoster);
-makeYourOwnBtn.addEventListener('click',showForm);
+makeYourOwnBtn.addEventListener('click', showForm);
 showSavedPosterBtn.addEventListener('click', viewSavedPoster);
-
-function viewSavedPoster() {
-  showSavedPoster.classList.remove('hidden');//saying its shown
-  homePage.classList.add('hidden');//adding a class(envoking) the new class to hide
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function showForm() {
-  formPage.classList.remove('hidden');
-  homePage.classList.add('hidden');
-};
+takeMeBackBtn.addEventListener('click', returnToHomepage);
+backToMainBtn.addEventListener('click',returnToHomepage);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
+
 
 function getRandomImage() {
   var randomImageIndex = getRandomIndex(images);
@@ -177,4 +154,20 @@ function getRandomQuotes() {
   var randomQuotes = quotes[randomQuoteIndex];
 
   return randomQuotes;
+};
+
+function showForm() {
+  formPage.classList.remove('hidden');
+  homePage.classList.add('hidden');
+};
+
+function viewSavedPoster() {
+  showSavedPoster.classList.remove('hidden');
+  homePage.classList.add('hidden');
+};
+
+function returnToHomepage () {
+  homePage.classList.remove('hidden');
+  formPage.classList.add('hidden');
+  showSavedPoster.classList.add('hidden');
 };
