@@ -2,6 +2,7 @@
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
+var showRandomPosterButton = document.querySelector('.show-random');
 
 // console.log(returnImage.src)
 // <img class="poster-img" src="getRandomImage" alt="nothin' to see here">
@@ -109,7 +110,8 @@ var currentPoster;
 
 // event listeners go here 👇
 window.onload = generateRandomPoster()
-
+showRandomPosterButton.addEventListener('click', generateRandomPoster);
+// target.addEventListener(type, listener [, options]);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
