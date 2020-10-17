@@ -3,9 +3,14 @@ var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
 var showRandomPosterButton = document.querySelector('.show-random');
+var formPage = document.querySelector('.poster-form');
+var homePage = document.querySelector('.main-poster');
+var makeYourOwnBtn = document.querySelector('.show-form');
+var showSavedPosterBtn = document.querySelector('.show-saved');
+var showSavedPoster = document.querySelector('.saved-posters');
+var takeMeBackBtn = document.querySelector('.show-main');
+var backToMainBtn = document.querySelector('.back-to-main');
 
-// console.log(returnImage.src)
-// <img class="poster-img" src="getRandomImage" alt="nothin' to see here">
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -111,13 +116,17 @@ var currentPoster;
 // event listeners go here 👇
 window.onload = generateRandomPoster()
 showRandomPosterButton.addEventListener('click', generateRandomPoster);
-// target.addEventListener(type, listener [, options]);
+makeYourOwnBtn.addEventListener('click', showForm);
+showSavedPosterBtn.addEventListener('click', viewSavedPoster);
+takeMeBackBtn.addEventListener('click', returnToHomepage);
+backToMainBtn.addEventListener('click',returnToHomepage);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
+
 
 function getRandomImage() {
   var randomImageIndex = getRandomIndex(images);
@@ -145,4 +154,20 @@ function getRandomQuotes() {
   var randomQuotes = quotes[randomQuoteIndex];
 
   return randomQuotes;
+};
+
+function showForm() {
+  formPage.classList.remove('hidden');
+  homePage.classList.add('hidden');
+};
+
+function viewSavedPoster() {
+  showSavedPoster.classList.remove('hidden');
+  homePage.classList.add('hidden');
+};
+
+function returnToHomepage () {
+  homePage.classList.remove('hidden');
+  formPage.classList.add('hidden');
+  showSavedPoster.classList.add('hidden');
 };
