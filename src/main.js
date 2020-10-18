@@ -194,5 +194,12 @@ function createUserInputsPoster(event) {
   posterTitle.innerText = currentPoster.title;
   posterQuote.innerText = currentPoster.quote;
   returnToHomepage ()
+  clearUserInputs() 
+};
+
+function clearUserInputs() {
+  userImageInput.value = '';
+  userTitleInput.value = '';
+  userQuoteInput.value = '';
 };
 
