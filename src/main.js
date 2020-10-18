@@ -8,6 +8,7 @@ var makeYourOwnBtn = document.querySelector('.show-form');
 var showSavedPosterBtn = document.querySelector('.show-saved');
 var takeMeBackBtn = document.querySelector('.show-main');
 var backToMainBtn = document.querySelector('.back-to-main');
+var showMyPosterBtn = document.querySelector('.make-poster')
 
 var formPage = document.querySelector('.poster-form');
 var homePage = document.querySelector('.main-poster');
@@ -125,6 +126,7 @@ makeYourOwnBtn.addEventListener('click', showForm);
 showSavedPosterBtn.addEventListener('click', viewSavedPoster);
 takeMeBackBtn.addEventListener('click', returnToHomepage);
 backToMainBtn.addEventListener('click',returnToHomepage);
+showMyPosterBtn.addEventListener('click', createUserInputsPoster);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -141,10 +143,10 @@ function getRandomImage() {
 };
 
 function generateRandomPoster() {
-    var randomPoster = new Poster(getRandomImage(), getRandomTitle(), getRandomQuotes());
-    posterImage.src = randomPoster.imageURL
-    posterTitle.innerText = randomPoster.title
-    posterQuote.innerText = randomPoster.quote
+    currentPoster = new Poster(getRandomImage(), getRandomTitle(), getRandomQuotes());
+    posterImage.src = currentPoster.imageURL
+    posterTitle.innerText = currentPoster.title
+    posterQuote.innerText = currentPoster.quote
 };
 
 function getRandomTitle() {
@@ -179,7 +181,18 @@ function returnToHomepage () {
 
 function saveUserInputs() {
   images.push(userImageInput.value);
-  titles.push(userTitleInput.value):
+  titles.push(userTitleInput.value);
   quotes.push(userQuoteInput.value);
+};
+
+function createUserInputsPoster(event) {
+  event.preventDefault();
+  saveUserInputs();
+  currentPoster = new Poster (userImageInput.value, userTitleInput.value, userQuoteInput.value);
+
+  posterImage.src = currentPoster.imageURL;
+  posterTitle.innerText = currentPoster.title;
+  posterQuote.innerText = currentPoster.quote;
+  returnToHomepage ()
 };
 
