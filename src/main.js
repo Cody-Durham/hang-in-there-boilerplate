@@ -203,3 +203,8 @@ function clearUserInputs() {
   userQuoteInput.value = '';
 };
 
+function savePoster() {
+  if (!savedPosters.includes(currentPoster)) {
+    savedPosters.push(currentPoster);
+  };
+};
