@@ -8,7 +8,8 @@ var makeYourOwnBtn = document.querySelector('.show-form');
 var showSavedPosterBtn = document.querySelector('.show-saved');
 var takeMeBackBtn = document.querySelector('.show-main');
 var backToMainBtn = document.querySelector('.back-to-main');
-var showMyPosterBtn = document.querySelector('.make-poster')
+var showMyPosterBtn = document.querySelector('.make-poster');
+var savePosterBtn = document.querySelector('.save-poster');
 
 var formPage = document.querySelector('.poster-form');
 var homePage = document.querySelector('.main-poster');
@@ -17,6 +18,8 @@ var showSavedPoster = document.querySelector('.saved-posters');
 var userImageInput = document.querySelector('#poster-image-url');
 var userTitleInput = document.querySelector('#poster-title');
 var userQuoteInput = document.querySelector('#poster-quote');
+
+var savedPostersGrid = document.querySelector('.saved-posters-grid')
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -127,6 +130,7 @@ showSavedPosterBtn.addEventListener('click', viewSavedPoster);
 takeMeBackBtn.addEventListener('click', returnToHomepage);
 backToMainBtn.addEventListener('click',returnToHomepage);
 showMyPosterBtn.addEventListener('click', createUserInputsPoster);
+savePosterBtn.addEventListener('click', savePoster);
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -206,5 +210,18 @@ function clearUserInputs() {
 function savePoster() {
   if (!savedPosters.includes(currentPoster)) {
     savedPosters.push(currentPoster);
+    addSavePoster();
+  };
+
+function addSavePoster() {
+  savedPostersGrid.innerHTML = "";
+  for (var i = 0; i < savedPosters.length; i++) {
+    savedPostersGrid.insertAdjacentHTML('afterbegin', 
+    `<article class="mini-poster">
+      <img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[i].title}</h2>
+      <h4 class="poster-quote">${savedPosters[i].quote}</h4>
+    </article`);
+    };
   };
 };
