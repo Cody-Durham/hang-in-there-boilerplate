@@ -2,15 +2,20 @@
 var posterImage = document.querySelector('.poster-img');
 var posterTitle = document.querySelector('.poster-title');
 var posterQuote = document.querySelector('.poster-quote');
+
 var showRandomPosterButton = document.querySelector('.show-random');
-var formPage = document.querySelector('.poster-form');
-var homePage = document.querySelector('.main-poster');
 var makeYourOwnBtn = document.querySelector('.show-form');
 var showSavedPosterBtn = document.querySelector('.show-saved');
-var showSavedPoster = document.querySelector('.saved-posters');
 var takeMeBackBtn = document.querySelector('.show-main');
 var backToMainBtn = document.querySelector('.back-to-main');
 
+var formPage = document.querySelector('.poster-form');
+var homePage = document.querySelector('.main-poster');
+var showSavedPoster = document.querySelector('.saved-posters');
+
+var userImageInput = document.querySelector('#poster-image-url');
+var userTitleInput = document.querySelector('#poster-title');
+var userQuoteInput = document.querySelector('#poster-quote');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -171,3 +176,10 @@ function returnToHomepage () {
   formPage.classList.add('hidden');
   showSavedPoster.classList.add('hidden');
 };
+
+function saveUserInputs() {
+  images.push(userImageInput.value);
+  titles.push(userTitleInput.value):
+  quotes.push(userQuoteInput.value);
+};
+
