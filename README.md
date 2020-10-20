@@ -5,7 +5,7 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Features](#features)
-* [Technologies](#teachnologies)
+* [Technologies](#technologies)
 * [Deployment](#deployment)
 * [Authors](#authors)
 * [Contributors](#contributors)
