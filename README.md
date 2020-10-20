@@ -39,7 +39,7 @@ Click on `Make Your Own Poster` button and fill out the respective inputs, then 
 
 * **Image** - In this field, enter the url for an image you'd like to use as your poster image.
 * **Title** - Enter the desired title for the custom poster. The title will be displayed on the poster.
-* **Quote** Enter desired quote for the poster. This quote will be displayed on the poster.
+* **Quote** - Enter desired quote for the poster. This quote will be displayed on the poster.
 
 <p align = "center">
 <img src="https://media.giphy.com/media/7wzaWSH8oP5ZIR5UUJ/giphy.gif">
