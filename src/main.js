@@ -187,7 +187,6 @@ function saveUserInputs() {
 
 function createUserInputsPoster(event) {
   event.preventDefault();
-  saveUserInputs();
   currentPoster = new Poster(userImageInput.value, userTitleInput.value, userQuoteInput.value);
 
   posterImage.src = currentPoster.imageURL;
