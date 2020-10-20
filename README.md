@@ -3,11 +3,11 @@
 ###### Create Your Own Inspirational Poster!
 ---
 ## Table of Contents
-[Introduction](#introduction)
-[Features](#features)
-[Deployment](#deployment)
-[Authors](#authors)
-[Contributors](#contributors)
+* [Introduction](#introduction)
+* [Features](#features)
+* [Deployment](#deployment)
+* [Authors](#authors)
+* [Contributors](#contributors)
 
 
 ## Introduction
