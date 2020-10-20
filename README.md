@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Introduction](#introduction)
 * [Features](#features)
+* [Technologies](#teachnologies)
 * [Deployment](#deployment)
 * [Authors](#authors)
 * [Contributors](#contributors)
@@ -69,6 +70,8 @@ Navigate to the "Show Saved Posters" section by clicking the "Show Saved Posters
   </details>
 
 ---
+## Technologies
+JavaScript, HTML & CSS
 
 ## Deployment
 # https://cody-durham.github.io/hang-in-there-boilerplate/
