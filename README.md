@@ -30,7 +30,7 @@ Upon page load, a random poster will be generated, drawing on an array of titles
 
 <details>
   <summary>**Under the Hood**</summary>
-  A database of assetts for the random posters (image titles, and quotes) wwere already provided for the project, which is what is drawn upon to create the poster on page load/refresh. Additional assetts are added dynamically to the respective arrays upon creation of a custom poster - the inputted data is stored away and can now be drawn upon when generating random covers. To creat a random poster, click `Show Another Random Poster` button, an event listener was assigned to the button. Upon click, an assett is chosen at random from each of the arrays for the corresponding poster elements and is placed into a new Class object - the new poster. It is then displayed on the home page by reassigning the corresponding HTML elements, which are targeted with the `document.querySelector()` method.
+  A database of assetts for the random posters (image titles, and quotes) were already provided for the project, which is what is drawn upon to create the poster on page load/refresh. Additional assetts are added dynamically to the respective arrays upon creation of a custom poster - the inputted data is stored away and can now be drawn upon when generating random covers. To create a random poster, click `Show Another Random Poster` button, an event listener was assigned to the button. Upon click, an asset is chosen at random from each of the arrays for the corresponding poster elements and is placed into a new Class object - the new poster. It is then displayed on the home page by reassigning the corresponding HTML elements, which are targeted with the `document.querySelector()` method.
 </details>
 
 #### Create Custom Poster
@@ -66,18 +66,6 @@ Navigate to the "Show Saved Posters" section by clicking the "Show Saved Posters
   <details>
     <summary>**Under the Hood**</summary>
       To prevent duplicate posters from displaying, we decided to clear HTML elements composing the displayed list of saved posters - which would be leftover from any previous visit to the saved posters section. With the section cleared, a `for loop` is used to iterate through the `savedPosters` array and used in the key values of the poster object at index [i] into the corresponding HTML elements (which are targeted with the `.querySelector()` method). Those elements are then inserted into the HTML using the `insertAdjacentHTML()` method.
-  </details>
-
-#### Double Click to Delete Saved Poster
-In the "Show Saved Poster" section, double-clicking directly on the saved poster the user wishes to delete will remove that poster from the view and remove it from the array containing the date of that saved poster.
-
-<p align = "center">
-<img src="https://media.giphy.com/media/d8Hjqg3VeOpDsch4R2/giphy.gif">
-</p>
-
-  <details>
-    <summary>**Under the Hood**</summary>
-    A new function was declared `deletePoster()` that is responsible for using event delagation, we targeted the class `mini-poster` using the `closest()` method to make sure that if the user double clicks anywhere on the mini poster image it will be deleted. We apply the double click method to an event listener on the window/class of `savedPostersGrid` and when that event listener is triggered it will run the `deletePoster()` function and it will look for matching ID's once it finds a match it will delete the double-clicked element from the savedPosters array and the page.
   </details>
 
 ---
