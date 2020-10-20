@@ -19,7 +19,7 @@ var userImageInput = document.querySelector('#poster-image-url');
 var userTitleInput = document.querySelector('#poster-title');
 var userQuoteInput = document.querySelector('#poster-quote');
 
-var savedPostersGrid = document.querySelector('.saved-posters-grid')
+var savedPostersGrid = document.querySelector('.saved-posters-grid');
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -138,14 +138,6 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-
-function getRandomImage() {
-  var randomImageIndex = getRandomIndex(images);
-  var randomImage = images[randomImageIndex];
-
-  return randomImage;
-};
-
 function generateRandomPoster() {
     currentPoster = new Poster(getRandomImage(), getRandomTitle(), getRandomQuotes());
     posterImage.src = currentPoster.imageURL
@@ -153,16 +145,20 @@ function generateRandomPoster() {
     posterQuote.innerText = currentPoster.quote
 };
 
+function getRandomImage() {
+  var randomImage = images[getRandomIndex(images)];
+
+  return randomImage;
+};
+
 function getRandomTitle() {
-  var randomTitleIndex = getRandomIndex(titles);
-  var randomTitle = titles[randomTitleIndex];
+  var randomTitle = titles[getRandomTitle(titles)];
 
   return randomTitle;
 };
 
 function getRandomQuotes() {
-  var randomQuoteIndex = getRandomIndex(quotes);
-  var randomQuotes = quotes[randomQuoteIndex];
+  var randomQuote = quotes[getRandomQuotes(quotes)];
 
   return randomQuotes;
 };
@@ -177,7 +173,7 @@ function viewSavedPoster() {
   homePage.classList.add('hidden');
 };
 
-function returnToHomepage () {
+function returnToHomepage() {
   homePage.classList.remove('hidden');
   formPage.classList.add('hidden');
   showSavedPoster.classList.add('hidden');
@@ -192,13 +188,13 @@ function saveUserInputs() {
 function createUserInputsPoster(event) {
   event.preventDefault();
   saveUserInputs();
-  currentPoster = new Poster (userImageInput.value, userTitleInput.value, userQuoteInput.value);
+  currentPoster = new Poster(userImageInput.value, userTitleInput.value, userQuoteInput.value);
 
   posterImage.src = currentPoster.imageURL;
   posterTitle.innerText = currentPoster.title;
   posterQuote.innerText = currentPoster.quote;
-  returnToHomepage ()
-  clearUserInputs() 
+  returnToHomepage()
+  clearUserInputs()
 };
 
 function clearUserInputs() {
@@ -216,7 +212,7 @@ function savePoster() {
 function addSavePoster() {
   savedPostersGrid.innerHTML = "";
   for (var i = 0; i < savedPosters.length; i++) {
-    savedPostersGrid.insertAdjacentHTML('afterbegin', 
+    savedPostersGrid.insertAdjacentHTML('afterbegin',
     `<article class="mini-poster">
       <img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
       <h2 class="poster-title">${savedPosters[i].title}</h2>
