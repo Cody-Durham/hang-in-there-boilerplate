@@ -74,7 +74,7 @@ Navigate to the "Show Saved Posters" section by clicking the "Show Saved Posters
 JavaScript, HTML & CSS
 
 ## Deployment
-# https://cody-durham.github.io/hang-in-there-boilerplate/
+### https://cody-durham.github.io/hang-in-there-boilerplate/
 
 
 #### Continuous Improvement/Future Improvements
